@@ -1,0 +1,17 @@
+//Code signal Smart Assigning Asana Company Challenge
+
+String smartAssigning(String[] names, boolean[] statuses, int[] projects, int[] tasks) {
+        
+        int j = 0 ;
+        for(int i =0;i<names.length;i++){
+            if(statuses[i])
+                    continue;
+            else {
+                    if(tasks[i]<tasks[j] || (tasks[i]==tasks[j] && projects[i]<projects[j] ))
+                      j=i;
+                }
+        }
+
+
+        return names[j];
+}
