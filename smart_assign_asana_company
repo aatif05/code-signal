@@ -1,4 +1,4 @@
-//Code signal Smart Assigning Asana Company Challenge
+//Code signal java code for Smart Assigning Asana Company Challenge
 
 String smartAssigning(String[] names, boolean[] statuses, int[] projects, int[] tasks) {
         
