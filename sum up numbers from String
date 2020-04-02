@@ -1,0 +1,19 @@
+
+ Function to sum every number present in the String. // Java
+int sumUpNumbers(String inputString) {
+    int sum = 0 ; 
+    String nums1 = inputString.replaceAll("[^\\d]", " "); //replace non digits with space
+    nums1 = nums1.trim(); 
+    nums1 = nums1.replaceAll(" +", " "); 
+
+    if(nums1.length()>=1){
+    String[] nums = nums1.split(" "); 
+    for(String a  : nums){
+            sum+=Integer.parseInt(a);
+    }
+
+
+}
+    
+  return sum ; 
+}
