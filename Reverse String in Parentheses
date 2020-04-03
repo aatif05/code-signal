@@ -1,0 +1,13 @@
+//Reverse String in Parentheses 
+//Found this nice code solution from https://app.codesignal.com/arcade/intro/level-3/9DgaPsE2a7M6M2Hu6/solutions?solutionId=Y2vuE8dzYvEWPJTgR 
+
+String reverseInParentheses(String inputString) {
+    StringBuilder str = new StringBuilder(inputString);
+    int start, end;
+    while(str.indexOf("(") != -1){
+        start = str.lastIndexOf("(");
+        end = str.indexOf(")", start);
+        str.replace(start, end + 1, new StringBuilder(str.substring(start+1, end)).reverse().toString());
+    }
+    return str.toString();
+}
