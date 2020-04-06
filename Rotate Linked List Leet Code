@@ -1,0 +1,50 @@
+
+
+
+class Solution {
+    public ListNode rotateRight(ListNode head, int k) {
+        
+     
+        int size = ListSize(head); //finding size of the list
+
+        if(head ==null || k ==0) return head;
+      ListNode head1=head;
+      
+        for(int i =0 ;i < k%size ;i++){  //using k%size because K can bevery large and get Time Limit Exceeded.
+         head1 =  rotate(head1);      
+        }
+        return head1;
+            
+    }
+    
+    
+    private ListNode rotate(ListNode head){
+        ListNode  temp =head;
+        ListNode prev=null;
+        if (temp.next ==null) return temp;
+        while(temp.next!=null){
+                prev =temp; 
+                temp =temp.next;
+        }
+    
+         ListNode lastNode = prev.next;
+        lastNode.next=head;
+        head=lastNode;
+        prev.next=null;
+    
+        return head;
+        
+    }
+    
+    
+    
+    int ListSize(ListNode head){
+        int size =0;
+        ListNode temp =head;
+        while(temp!=null){
+            temp=temp.next;
+            size++;
+        }
+        return size;
+    }
+}
