@@ -1,0 +1,12 @@
+//Count ways to express a number as sum of consecutive numbers
+
+Found best solution at 
+https://app.codesignal.com/arcade/code-arcade/labyrinth-of-nested-loops/EQSjA5PRfyHueeNkj/solutions?solutionId=HqnzkXvXcBmoPsrNc
+   int count=0, i, m;
+		
+		for(i=1, m=i;m<n;i++,m +=i){
+			if((n-m)%(i+1)==0){
+				count++;
+			}
+		}
+		return count;
