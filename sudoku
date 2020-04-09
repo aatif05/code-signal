@@ -1,0 +1,19 @@
+Found this solution on leet code and tried it on code signal. 
+
+https://app.codesignal.com/arcade/intro/level-12/tQgasP8b62JBeirMS/solutions?solutionId=iqjB3NeFFcWKEJ7Er
+
+boolean sudoku(int[][] grid) {
+Set<String> sodCheck = new HashSet<>();
+ for(int i =0;i<9;i++){
+     for(int j = 0 ;j<9;j++){
+           int number = grid[i][j];
+         if(!sodCheck.add(number +"adding value in row"+i) || 
+                   !sodCheck.add(number +"adding value in column"+j) || 
+                   !sodCheck.add(number +"adding value in box "+i/3 +"-"+ j/3) )
+                            return false;
+                }
+     }
+  return true;
+ }
+
+
