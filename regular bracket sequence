@@ -1,0 +1,14 @@
+//For a string consisting of only '('s and ')'s, determine if it is a regular bracket sequence or not.
+
+boolean regularBracketSequence1(String sequence) {
+ Stack<Character> a = new Stack<>();
+ for(char c : sequence.toCharArray()){
+     if(a.isEmpty() && c==')')  //check if stack is emptry and character is closing bracke. and return false;
+        return false;
+     if(c=='(')
+        a.push(c);
+     if(c==')' && !a.isEmpty())  
+        a.pop();
+ }
+ return a.isEmpty();
+}
